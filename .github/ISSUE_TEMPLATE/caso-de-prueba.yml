@@ -1,0 +1,102 @@
+name: Caso de prueba
+description: Documentar un caso de prueba manual trazable y verificable
+title: "[CP_000] "
+labels:
+  - test-case
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Crear un issue por escenario. Reemplazar `CP_000` del título por un identificador único y completar el nombre con el comportamiento que se verificará.
+
+  - type: input
+    id: identificador
+    attributes:
+      label: Identificador único
+      description: Usar el mismo identificador que en el título.
+      placeholder: CP_001
+    validations:
+      required: true
+
+  - type: input
+    id: funcionalidad
+    attributes:
+      label: Funcionalidad o módulo
+      placeholder: Alta de usuarios
+    validations:
+      required: true
+
+  - type: input
+    id: requisito
+    attributes:
+      label: Requisito o historia relacionada
+      description: Enlazar o identificar el requisito solicitado por el cliente.
+      placeholder: "#123 o enlace a la historia"
+    validations:
+      required: true
+
+  - type: textarea
+    id: objetivo
+    attributes:
+      label: Objetivo
+      description: Explicar qué comportamiento se verificará, con más detalle que en el título.
+      placeholder: Verificar que al registrar un usuario con datos válidos, el sistema complete el alta.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: prioridad
+    attributes:
+      label: Prioridad de ejecución
+      description: Alta para el camino principal, media para uno alternativo y baja para una combinación menos probable.
+      options:
+        - Alta
+        - Media
+        - Baja
+    validations:
+      required: true
+
+  - type: input
+    id: casos_relacionados
+    attributes:
+      label: Casos relacionados
+      description: Enlazar otros casos si corresponde.
+      placeholder: "#124, #125"
+
+  - type: textarea
+    id: precondiciones
+    attributes:
+      label: Precondiciones
+      description: Indicar el estado necesario antes de ejecutar. Referenciar un caso o procedimiento de preparación si hace falta; no repetir acciones de los pasos.
+      placeholder: "El usuario estará registrado y la aplicación estará disponible. Si no hay precondiciones, escribir: No aplica."
+    validations:
+      required: true
+
+  - type: textarea
+    id: datos
+    attributes:
+      label: Datos de entrada
+      description: Describir tipos, clases o condiciones de los datos. Incluir valores concretos solo si el requisito los exige.
+      placeholder: "Correo: dirección con formato válido; contraseña: cadena que cumpla la política vigente."
+
+  - type: textarea
+    id: pasos_y_resultados
+    attributes:
+      label: Pasos y resultados esperados
+      description: Escribir entre 5 y 20 pasos cuando el escenario lo permita. Cada paso debe incluir su propio resultado observable. Usar infinitivo para la acción y futuro para el resultado. En escenarios de error, describir la respuesta observable del sistema.
+      placeholder: |
+        1. Acceder a la pantalla de registro.
+           Resultado: El sistema mostrará el formulario de registro.
+        2. Completar los campos con datos del tipo indicado.
+           Resultado: El sistema mostrará los datos ingresados en los campos correspondientes.
+        3. ...
+           Resultado: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: postcondiciones
+    attributes:
+      label: Postcondiciones
+      description: Indicar el estado en que quedará el sistema tras la ejecución, si corresponde. No repetir resultados de pasos.
+      placeholder: El nuevo usuario quedará registrado.
