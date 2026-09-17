@@ -83,16 +83,15 @@ body:
     id: pasos_y_resultados
     attributes:
       label: Pasos y resultados esperados
-      description: Escribir entre 5 y 20 pasos cuando el escenario lo permita. Cada paso debe incluir su propio resultado observable. Usar infinitivo para la acción y futuro para el resultado. En escenarios de error, describir la respuesta observable del sistema.
-      placeholder: |
-        1. Acceder a la pantalla de registro.
-           Resultado: El sistema mostrará el formulario de registro.
-        2. Completar los campos con datos del tipo indicado.
-           Resultado: El sistema mostrará los datos ingresados en los campos correspondientes.
-        3. ...
-           Resultado: ...
-    validations:
-      required: true
+      description: Completar una fila por paso. Usar infinitivo para la acción y futuro para el resultado observable. Agregar filas si hace falta, hasta 20 pasos, y eliminar las que no se usen.
+      value: |
+        | N.º | Paso | Resultado esperado |
+        | --- | --- | --- |
+        | 1 |  |  |
+        | 2 |  |  |
+        | 3 |  |  |
+        | 4 |  |  |
+        | 5 |  |  |
 
   - type: textarea
     id: postcondiciones
